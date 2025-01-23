@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-        <img src="images/r-logos-modern-logo-with-colorful-design-vector-business-design_345408-1766.avif" alt="logo">
+        <img src="images/hawk-wings-eagle-logo-black-white_677805-1166.avif" alt="logo">
         <h1>Chamber</h1>
     </header>
         <nav>
@@ -61,8 +61,36 @@
     </main>
     <footer>
       <p>&copy;2025 <span id="currentYear"></span> Madut Bol : Egypt, Cairo</p>
-      <p id="lastModified">Last Modified: </p> 
-      <p id="lastModified"><time datetime="currentYear"></time></p>
+      <p id="lastModified">Last Modified: <span></span></p>
+      <p id="currentDate"><time datetime="currentDate"></time></p>
+
+      <script>
+        // Get the current date and time
+        const currentDate = new Date();
+    
+        // Format the current date and time (optional)
+        const options = { 
+          weekday: 'long', 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric', 
+          hour: 'numeric', 
+          minute: 'numeric', 
+          second: 'numeric' 
+        };
+        const formattedDate = currentDate.toLocaleDateString('en-US', options);
+    
+        // Update the current date element
+        document.getElementById('currentDate').textContent = formattedDate;
+    
+        // Get the last modified date of the HTML document (if available)
+        const lastModifiedDate = document.lastModified; 
+    
+        // Update the last modified element
+        document.getElementById('lastModified').querySelector('span').textContent = lastModifiedDate;
+      </script>
     </footer>
+
+   
 </body>
 </html>
