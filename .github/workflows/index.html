@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madut Bol - WDD 230 - Web Frontend Development</title>
+    <meta name="description" content="WDD 230 - Web Frontend Development">
+    <meta name="keywords" content="course assignment portal">
+    <meta name="author" content="Madut Bol">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="icon" href="images/madut.01.jpg">
+    <meta property="og:title" content="Madut Bol - WDD 230 - Web Frontend Development">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://https://images.app.goo.gl/oBnVDaDKU1QrqoHZ9/hometown-image.jpg">
+    <meta property="og:url" content="https://https://guem-bol.github.io/wdd230/index.html/course-portal/">
+    <link rel="stylesheet" href="styles/normalize.css">
+</head>
+<body>
+    <header>
+        <img src="images/madut.01.webp" alt="madut">
+        <h1>Madut Bol<span></span></h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="chamber/index.html">Chamber</a></li>
+            <li><a href="#">Site Plan</a></li>
+            <li><a href="#">Form</a></li>
+        </ul>
+    </nav>
+
+    
+
+      <picture class="Temple">
+        <source media="(max-width: 400px)" srcset="images/cape_town_africa_temple_rendering.webp"> 
+        <source srcset="images/cape_town_africa_temple_rendering.webp" 
+                media="(min-width: 401px) and (max-width: 960px)"> 
+        <img src="images/cape_town_africa_temple_rendering.webp" alt="Image of the Temple" width="960px"> 
+      </picture>
+    <main>
+        <h1>WDD 230: Web Frontend Development</h1>
+        
+        <section class="card">
+            <h2>Learning Activities</h2>
+            <ul>
+                <li>week 01:<a href="week01/holygrail.html"> Layouts </a></li>
+                <li>week 02:<a href="week02/design.html">Design</a></li>
+                <li>week 03:<a href="week03/images/landscape.jpg">wepb</a></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Information</h2>
+            <ul>
+            <li><strong>Weather: 23&#176;C</strong> <span id="weather"></span></li> 
+            <li><strong></strong> <span id="visit-counter"></span></li>
+            </ul>
+        </section>
+        
+    
+
+    <script>
+        // Function to get visit count from localStorage
+        function getVisitCount() {
+            let count = localStorage.getItem('pageVisits');
+            if (count === null) {
+                count = 0;
+            } else {
+                count = parseInt(count);
+            }
+            return count;
+        }
+
+        // Function to update visit count and store in localStorage
+        function updateVisitCount() {
+            let count = getVisitCount();
+            count++;
+            localStorage.setItem('pageVisits', count);
+            return count;
+        }
+
+        // Function to display the visit count
+        function displayVisitCount(count) {
+            const visitCountElement = document.getElementById('visit-counter');
+            visitCountElement.textContent = `Page Visits: ${count}`;
+        }
+
+        // Get/update and display the visit count
+        let count = updateVisitCount(); 
+        displayVisitCount(count); 
+    </script>
+    </main>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2906.4995778820717!2d31.255221289471528!3d29.967070613560633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1737918117754!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+
+    
+    <footer>
+        
+        <p>&copy;2025 <span id="currentYear"></span> Madut Bol : Egypt, Cairo</p>
+        <p id="lastModified">Last Modified: <span></span></p>
+        <p id="currentDate"><time datetime="currentDate"></time></p>
+  
+        <script>
+          // Get the current date and time
+          const currentDate = new Date();
+      
+          // Format the current date and time (optional)
+          const options = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: 'numeric', 
+            minute: 'numeric', 
+            second: 'numeric' 
+          };
+          const formattedDate = currentDate.toLocaleDateString('en-US', options);
+      
+          // Update the current date element
+          document.getElementById('currentDate').textContent = formattedDate;
+      
+          // Get the last modified date of the HTML document (if available)
+          const lastModifiedDate = document.lastModified; 
+      
+          // Update the last modified element
+          document.getElementById('lastModified').querySelector('span').textContent = lastModifiedDate;
+        </script>
+
+          
+    </footer>
+
+    <script src="getDates.js"></script>
+</body>
+</html>
