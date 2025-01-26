@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Madut Bol - WDD 230 - Web Frontend Development"</title>
+    <title>Madut Bol - WDD 230 - Web Frontend Development</title>
     <meta name="description" content="WDD 230 - Web Frontend Development">
     <meta name="keywords" content="course assignment portal">
     <meta name="author" content="Madut Bol">
@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>
-        <img src="images/madut.01.jpg" alt="madut">
+        <img src="images/madut.01.webp" alt="madut">
         <h1>Madut Bol<span></span></h1>
     </header>
 
@@ -31,6 +31,13 @@
     </nav>
 
     
+
+      <picture class="Temple">
+        <source media="(max-width: 400px)" srcset="images/cape_town_africa_temple_rendering.webp"> 
+        <source srcset="images/cape_town_africa_temple_rendering.webp" 
+                media="(min-width: 401px) and (max-width: 960px)"> 
+        <img src="images/cape_town_africa_temple_rendering.webp" alt="Image of the Temple" width="960px"> 
+      </picture>
     <main>
         <h1>WDD 230: Web Frontend Development</h1>
         
@@ -47,16 +54,78 @@
             <h2>Information</h2>
             <ul>
             <li><strong>Weather: 23&#176;C</strong> <span id="weather"></span></li> 
-            <li><strong>Page Visits: 8</strong> <span id="visitCount"></span></li>
+            <li><strong></strong> <span id="visit-counter"></span></li>
             </ul>
         </section>
+        
+    
+
+    <script>
+        // Function to get visit count from localStorage
+        function getVisitCount() {
+            let count = localStorage.getItem('pageVisits');
+            if (count === null) {
+                count = 0;
+            } else {
+                count = parseInt(count);
+            }
+            return count;
+        }
+
+        // Function to update visit count and store in localStorage
+        function updateVisitCount() {
+            let count = getVisitCount();
+            count++;
+            localStorage.setItem('pageVisits', count);
+            return count;
+        }
+
+        // Function to display the visit count
+        function displayVisitCount(count) {
+            const visitCountElement = document.getElementById('visit-counter');
+            visitCountElement.textContent = `Page Visits: ${count}`;
+        }
+
+        // Get/update and display the visit count
+        let count = updateVisitCount(); 
+        displayVisitCount(count); 
+    </script>
     </main>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2906.4995778820717!2d31.255221289471528!3d29.967070613560633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1737918117754!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+
     
     <footer>
         
-            <p>&copy;2025 <span id="currentYear"></span> Madut Bol : Egypt, Cairo</p>
-            <p id="lastModified">Last Modified: </p> 
-            <p id="lastModified"><time datetime="currentYear"></time></p>
+        <p>&copy;2025 <span id="currentYear"></span> Madut Bol : Egypt, Cairo</p>
+        <p id="lastModified">Last Modified: <span></span></p>
+        <p id="currentDate"><time datetime="currentDate"></time></p>
+  
+        <script>
+          // Get the current date and time
+          const currentDate = new Date();
+      
+          // Format the current date and time (optional)
+          const options = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: 'numeric', 
+            minute: 'numeric', 
+            second: 'numeric' 
+          };
+          const formattedDate = currentDate.toLocaleDateString('en-US', options);
+      
+          // Update the current date element
+          document.getElementById('currentDate').textContent = formattedDate;
+      
+          // Get the last modified date of the HTML document (if available)
+          const lastModifiedDate = document.lastModified; 
+      
+          // Update the last modified element
+          document.getElementById('lastModified').querySelector('span').textContent = lastModifiedDate;
+        </script>
 
           
     </footer>
