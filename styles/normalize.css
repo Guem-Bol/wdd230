@@ -28,9 +28,7 @@
    * Render the `main` element consistently in IE.
    */
   
-  main {
-    display: block;
-  }
+  
   
   /**
    * Correct the font size and margin on `h1` elements within `section` and
@@ -288,7 +286,7 @@
    */
   
   [type="search"] {
-    -webkit-appearance: textfield; /* 1 */
+   
     outline-offset: -2px; /* 2 */
   }
   
@@ -347,3 +345,58 @@
   [hidden] {
     display: none;
   }
+
+ 
+
+.Temple {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative; /* Make main a positioning context */
+  display: block;
+  width: 100%;
+  height: auto;
+ 
+}
+
+
+footer {
+  background-color:black;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+ 
+}
+
+
+
+body{
+
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  height: auto;
+  text-align: center;
+  
+}
+
+main h1{
+  text-align: center;
+  position: absolute;
+  left: 350px;
+}
+
+.card h2{
+  
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  margin-top: 95px;
+  background-color: greenyellow;
+  
+}
+
+.Temple img{
+
+  width: 100%;
+}
