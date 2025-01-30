@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="WDD 230 - Web Frontend Development">
+    <link rel="icon" href="images/madut.01.jpg">
+    <link rel="stylesheet" href="styles/base.css">
+    <meta property="og:title" content="Madut Bol - WDD 230 - Web Frontend Development">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://https://images.app.goo.gl/oBnVDaDKU1QrqoHZ9/hometown-image.jpg">
+    <meta property="og:url" content="https://https://guem-bol.github.io/wdd230/index.html/course-portal/">
+</head>
+<body>
+    <header>
+        <img src="images/hawk-wings-eagle-logo-black-white_677805-1166.avif" alt="logo">
+        <h1>Chamber</h1>
+    </header>
+        <nav>
+            <ul>  
+                <il><a href="">Home</a></il>
+                <il><a href="discover.html">Discover</a></il>
+                <il><a href="">Directory</a></il>
+                <il><a href="join.html">Join</a></il>
+            </ul>
+        </nav>
+
+        <section class="image-container">
+            <img src="images/forest-photography.jpg" alt="nature">
+            <a href="https://www.example.com/shop" class="call-to-action">Chamber</a>
+        </section>
+    
+    <main> 
+     
+    <form action="/submit_form" method="post">
+    <label for="name">First Name:</label>
+    <input type="text" id="name" name="ame" required placeholder="Enter your first name"><br><br>
+
+    <label for="name">Last Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your last name"><br><br>
+
+    <label for="jobTitle">Job Title:</label>
+     <input type="text" id="jobTitle" name="job_title" 
+     pattern="^[a-zA-Z\s-]+$" minlength="7" required placeholder="job_title"><br><br>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="example@gmail.com"><br><br>
+
+    <label for="mobilePhone">Mobile Phone:</label>
+    <input type="tel" id="mobilePhone" name="mobile_phone" required placeholder="+1 555-555-5555"
+       pattern="^[+]?[0-9\s-()]+$"  title="Enter a valid phone number (e.g., +1 555-123-4567)"><br><br>
+  
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" minlength="8"><br><br>
+
+    <label for="businessName">Business/Organization Name:</label>
+    <input type="text" id="businessName" name="business_name" required placeholder="Google"
+       minlength="2"  title="Enter the business/organization name"><br><br>
+
+       <p>Membership Level:</p>
+<label>
+  <input type="radio" name="membership_level" value="np" required> NP Membership (Non-Profit)
+</label><br>
+<label>
+  <input type="radio" name="membership_level" value="bronze"> Bronze Membership
+</label><br>
+<label>
+  <input type="radio" name="membership_level" value="silver"> Silver Membership
+</label><br>
+<label>
+  <input type="radio" name="membership_level" value="gold"> Gold Membership
+</label><br><br>
+
+         <label for="businessDescription">Business/Organization Description:</label><br>
+         <textarea id="businessDescription" name="business_description" rows="5" cols="50"
+          placeholder="Enter a description of the business/organization"></textarea><br><br>
+
+          <input type="hidden" id="formTimestamp" name="form_timestamp">
+
+          <script>
+            const timestampInput = document.getElementById('formTimestamp');
+            const now = new Date(); // Get current date and time
+          
+           
+            const timestampValue = now.toISOString();
+   
+          
+            timestampInput.value = timestampValue;
+          </script>
+          
+  
+    <input type="submit" value="Submit" formaction="thankyou.html">
+
+
+    </form>
+
+    </main>
+    <footer>
+      <p>&copy;2025 <span id="currentYear"></span> Madut Bol : Egypt, Cairo</p>
+      <p id="lastModified">Last Modified: <span></span></p>
+      <p id="currentDate"><time datetime="currentDate"></time></p>
+
+      <script>
+        // Get the current date and time
+        const currentDate = new Date();
+    
+        // Format the current date and time (optional)
+        const options = { 
+          weekday: 'long', 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric', 
+          hour: 'numeric', 
+          minute: 'numeric', 
+          second: 'numeric' 
+        };
+        const formattedDate = currentDate.toLocaleDateString('en-US', options);
+    
+        // Update the current date element
+        document.getElementById('currentDate').textContent = formattedDate;
+    
+        // Get the last modified date of the HTML document (if available)
+        const lastModifiedDate = document.lastModified; 
+    
+        // Update the last modified element
+        document.getElementById('lastModified').querySelector('span').textContent = lastModifiedDate;
+      </script>
+    </footer>
+
+   
+</body>
+</html>
